@@ -1,0 +1,50 @@
+<html>
+    <header>
+        <title>Mon album</title>
+        <link rel="stylesheet" media="screen" type="text/css" title="" href="styleAlbum.css" />
+        <script type='text/javascript' src='../js/jquery-3.1.1.min.js'></script>
+        <script type='text/javascript' src='../js/tri.js'></script>
+        <script type='text/javascript' src='../js/HillClimber.js'></script>
+    </header>
+    <body>
+        <div id="main"/>
+        <div id="titre">
+            <h1>Mon album de r&ecirc;ve</h1>
+        </div>
+
+        <input id='nbEval' type=number placeholder="Nombres d'évaluations"/>
+        <button id="generateAlbum">Générer l'album</button>
+        <div id="load">
+            <p>Génération de l'album en cours ...</p>
+        </div>
+        <div id="album">
+            <h3 id="pageTitle">Page 1</h3>
+            <a name="photo">
+                <div class="navigation">
+                    <a class="navButton" id="first" href="#page0">first</a>
+                    <a class="navButton apres" id="prev" href="#photo">prev</a>
+                    <a class="navButton apres" id="next" href="#photo" >next</a>
+                    <a class="navButton apres" id="last" href="#page8">last</a>
+                </div>
+                <div id="pictures">
+                    <div id="page0" class="pagePhoto"><p>Page 0</p></div>
+                    <div id="page1" class="pagePhoto"><p>Page 1</p></div>
+                    <div id="page2" class="pagePhoto"><p>Page 2</p></div>
+                    <div id="page3" class="pagePhoto"><p>Page 3</p></div>
+                    <div id="page4" class="pagePhoto"><p>Page 4</p></div>
+                    <div id="page5" class="pagePhoto"><p>Page 5</p></div>
+                    <div id="page6" class="pagePhoto"><p>Page 6</p></div>
+                    <div id="page7" class="pagePhoto"><p>Page 7</p></div>
+                    <div id="page8" class="pagePhoto"><p>Page 8</p></div> 
+
+                </div>
+
+                <div class="navigation">
+                    <a class="navButton" id="first" href="#page0">first</a>
+                    <a class="navButton apres" id="prev" href="#photo">prev</a>
+                    <a class="navButton apres" id="next" href="#photo" >next</a>
+                    <a class="navButton apres" id="last" href="#page8">last</a>
+                </div>
+        </div>
+    </body>
+</html>
