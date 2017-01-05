@@ -1,4 +1,9 @@
-[{
+/**Retourne le JSON des infos sur les photos
+ * 
+ * @returns {Array} JSON 
+ */
+var InfoPhoto = function(){
+    var data = [{
         "index": 0,
         "name": "rIMG_1940.jpg",
         "tags": {
@@ -2088,4 +2093,7 @@
             "width": 2592,
             "height": 1936
         }
-    }]
+    }];
+    alert("test");
+    return data;
+};

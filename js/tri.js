@@ -7,7 +7,7 @@ $(document).ready(function () {
         //Nombre d'évaluation
         var nbEval = $('#nbEval').val();
         if (nbEval == 0 || nbEval == "") {
-            nbEval = 3500; //Valeur Par défaut
+            nbEval = 5000; //Valeur Par défaut
         }
 
         //Message de chargement
@@ -15,10 +15,11 @@ $(document).ready(function () {
 
         var hill = new HillClimber(nbEval);
         hill.run();
-
+        hill.eval();
+        
 
         //Affichage de l'album
-        $('load').fadeOut(500);
+        $('#load').delay(700).fadeOut(500);
         $('#album').fadeIn(1000);
         $('#page0').fadeIn(1000);
     });
@@ -38,7 +39,7 @@ $(document).ready(function () {
                 break;
             case "last":
                 $('#page8').fadeIn(500);
-                $('#pageTitle').html("Page 8");
+                $('#pageTitle').html("Page 9");
                 break;
             case "next":
                 var next = currentPage + 1;
