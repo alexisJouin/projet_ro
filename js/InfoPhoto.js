@@ -2094,6 +2094,5 @@ var InfoPhoto = function(){
             "height": 1936
         }
     }];
-    alert("test");
     return data;
 };

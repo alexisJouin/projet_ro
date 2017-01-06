@@ -3,10 +3,12 @@
         <title>Mon album</title>
         <link rel="stylesheet" media="screen" type="text/css" title="" href="styleAlbum.css" />
         <script type='text/javascript' src='../js/jquery-3.1.1.min.js'></script>
-        <script type='text/javascript' src='../js/tri.js'></script>
         <script type='text/javascript' src='../js/HillClimber.js'></script>
         <script type='text/javascript' src='../js/Evaluation.js'></script>
         <script type='text/javascript' src='../js/InfoPhoto.js'></script>
+        <script type='text/javascript' src='../js/LocalSearch.js'></script>
+        <script type='text/javascript' src='../js/tri.js'></script>
+        
     </header>
     <body>
         <div id="main"/>
@@ -14,7 +16,8 @@
             <h1>Mon album de r&ecirc;ve</h1>
         </div>
 
-        <input id='nbEval' type=number placeholder="Nombres d'évaluations"/>
+        <input id='nbEvalMax' type=number placeholder="Nombres d'évaluations Max"/>
+        <input id='precision' type=number placeholder="Précision"/>
         <button id="generateAlbum">Générer l'album</button>
         <div id="load">
             <p>Génération de l'album en cours ...</p>

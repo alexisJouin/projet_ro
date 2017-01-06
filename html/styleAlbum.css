@@ -46,10 +46,11 @@
     padding: 3px 0px 3px 0px;
 }
 
-#pictures img {
+img {
     margin-top: 6px;
     margin-left: 6px;
     border : 3px solid black;
+    width: 250px;
 }
 
 .navigation {
@@ -103,7 +104,7 @@ div.navigation a[href].apres {
     display: none;
 }
 
-#nbEval{
+input{
     width:100%;
     font-size: 20px;
     text-align: center;

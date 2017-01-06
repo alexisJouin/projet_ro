@@ -1,25 +1,44 @@
 $(document).ready(function () {
-
+    var data = new InfoPhoto();
+    var output = "";
+    var nbPhotoByPage = 6;
     /**
      * Génération de l'album 
      */
     $('#generateAlbum').click(function () {
-        //Nombre d'évaluation
-        var nbEval = $('#nbEval').val();
-        if (nbEval == 0 || nbEval == "") {
-            nbEval = 5000; //Valeur Par défaut
-        }
-
         //Message de chargement
         $('#load').fadeIn(500);
 
-        var hill = new HillClimber(nbEval);
-        hill.run();
-        hill.eval();
-        
+        //Nombre d'évaluation
+        var nbEvalMax = $('#nbEvalMax').val();
+        var precision = $('#precision').val();
+        var p = 10;
 
+        if (nbEvalMax == 0 || nbEvalMax == "") {
+            nbEvalMax = 1000; //Valeur Par défaut
+        }
+        if (precision == 0 || precision == "") {
+            precision = 0.1; //Valeur Par défaut
+        }
+
+        //Instanciation des classes
+        //var hill = new HillClimber(nbEvalMax);
+        var ls = new LocalSearch(new HillClimber(nbEvalMax), p);
+        var evaluation = new Evaluation();
+
+        evaluation.setSolution();
+        //console.log("HC Result : " + hill.evalHC(evaluation));
+        var evaluation = ls.ILS(evaluation);
+        
+        console.log(evaluation.getSol());
+        
+        //On boucle sur l'ensemble des solutions
+        $.each(evaluation.getSol(), function (id, val) {
+            console.log(id,val);
+            $('#page' + id % nbPhotoByPage).append( "<img src='img/" + data[val]['name'] + "'/>");
+        });
         //Affichage de l'album
-        $('#load').delay(700).fadeOut(500);
+        $('#load').delay(1000).fadeOut(500);
         $('#album').fadeIn(1000);
         $('#page0').fadeIn(1000);
     });
