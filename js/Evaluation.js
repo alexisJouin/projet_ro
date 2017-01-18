@@ -34,7 +34,7 @@ var Evaluation = function () {
         var green2 = data[sol[photoA]]["color2"]["g"] - data [sol[photoB]]["color2"]["g"];
 
         var tot = red1 + blue1 + green1 + red2 + blue2 + green2;
-        var res = ((tot * 100) / 765);
+        var res = ((tot * 100) / 555);
 
         if (res < 50) {
             res = res * 1,5;
@@ -45,10 +45,47 @@ var Evaluation = function () {
     };
 
     this.evalDistance = function (photoA, photoB) {
-        var distA = data[sol[photoA]["ahashdist"]];
-        var distB = data[sol[photoB]["ahashdist"]];
-        console.log("distance A " + distA);
+//             // number on the first page
+//	    int size = (int) (long) pageSize.get(0);
+//	    // total number of photo in the album
+//	    for(var i = 0; i < pageSize.size(); i++) 
+//		nbPhoto += (int) (long) pageSize.get(i);
+//
+//	    albumInvDist = new double[nbPhoto][nbPhoto];
+//
+//	    // compute the distance
+//	    for(var i = 0; i < nbPhoto; i++) {
+//		for(var j = 0; j < nbPhoto; j++){ 
+//		    albumInvDist[i][j] = inverseDistance(size, i, j);
+//                }
+//            }       
+//        var distA = data[sol[photoA]["ahashdist"]];
+//        var distB = data[sol[photoB]["ahashdist"]];
+//        console.log("distance A " + distA);
     };
+    
+    this.inverseDistance = function(size, i, j){
+        var pagei = i / size;
+	var pagej = j / size;
+
+	if (pagei != pagej)
+	    // not on the same page: distance is infinite. Another choice is possible of course!
+	    return 0;
+	else {
+	    // positions in the page
+	    var posi = i % size;
+	    var posj = j % size;
+
+	    // coordinate on the page
+	    var xi = posi % 2;
+	    var yi = posi / 2;
+	    var xj = posj % 2;
+	    var yj = posj / 2;
+
+	    // Manhatthan distance
+//	    return ((double) 1) / (double) (Math.abs(xi - xj) + Math.abs(yi - yj));
+	}
+    }
 
     this.evalTags = function (photoA, photoB) {
         console.log("photos A : " + data[sol[photoA]]);
@@ -94,6 +131,8 @@ var Evaluation = function () {
             solution[res] = copyRes[res];
         }
         val = solution.getVal();
+        console.log(solution);
+        return solution;
     };
 
     //On constuit le tableau de photos résultat

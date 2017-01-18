@@ -11,7 +11,7 @@ var LocalSearch = function (localSearch, p) {
         eval.copyResultat(evaluation);
         eval.copyResultat(this.ILS(eval));
         resultatILS.copyResultat(eval);
-        bestVal = resultatILS.getVal();
+        var bestVal = resultatILS.getVal();
 
         while (nbEval < p) {
             

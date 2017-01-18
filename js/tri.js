@@ -30,8 +30,6 @@ $(document).ready(function () {
         //console.log("HC Result : " + hill.evalHC(evaluation));
         var evaluation = ls.ILS(evaluation);
         
-        console.log(evaluation.getSol());
-        
         //On boucle sur l'ensemble des solutions
         $.each(evaluation.getSol(), function (id, val) {
             console.log(id,val);
